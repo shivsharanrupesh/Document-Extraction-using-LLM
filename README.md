@@ -28,7 +28,6 @@ Outputs structured KYC data and fraud risk score.
 
 
 # Expected Output: 
-
 Extracted Text:
 Name: John Doe
 Date of Birth: 15-08-1985
@@ -42,3 +41,25 @@ Extracted KYC Details:
 Adding the Risk Score
 Validation & Risk Assessment:
 "The extracted KYC details are complete and valid. Risk Score: 10 (Low Risk)."
+
+# Enhanced Risk Scoring Logic
+We will define a custom function to calculate a risk score (0-100) based on:
+
+1. Completeness of KYC Data (Missing fields increase risk)
+2. Document Type Validation (Unknown document types increase risk)
+3. Pattern Anomalies (Incorrectly formatted names, dates, or addresses increase risk)
+4. Manual Risk Factors (E.g., flagged addresses, mismatched DOB, unusual names)
+
+# Updated Risk Scoring Mechanism
+Factor	                        Penalty
+Missing Fields (per field)	    +15
+Unknown Document Type	          +20
+Invalid DOB Format	            +10
+Short Address (<10 chars)	      +10
+Max Risk Score	                100
+
+# Risk Categories
+0-20 → Low Risk ✅ (Complete, valid KYC)
+21-50 → Medium Risk ⚠️ (Some missing data)
+51-100 → High Risk 🔴 (Many missing fields, fraud indicators)
+
