@@ -150,3 +150,34 @@ LLMs (like GPT-4) enhance the pipeline by:
 
 ![image](https://github.com/user-attachments/assets/25499889-ca96-445e-b18f-113d4ac6a103)
 
+# Where LLM is Most Useful
+
+1. Complex KYC Data Extraction
+Handles variations in document layouts.
+Extracts structured data intelligently.
+
+2. Fraud Detection & Risk Analysis
+Identifies fake names, mismatched DOBs, or altered documents.
+Flags high-risk customers for manual review.
+
+3. Data Standardization & Cleansing
+Converts extracted text into standardized formats.
+Example: Converts "123 Bnk St, Tornto, Can." → "123 Bank Street, Toronto, Canada".
+
+4. Intelligent Risk Scoring
+Detects unusual addresses (e.g., "000 Fake Street").
+Flags high-risk individuals (e.g., PEPs, blacklisted entities).
+
+
+# When NOT to Use LLM
+
+1. If Speed is a Priority
+LLMs take longer than simple regex-based extraction.
+Use LLM only for validation, not for every document.
+
+2. If the Task is Simple (Fixed Templates)
+If the document format never changes, regex is faster.
+
+3. If Cost is an Issue
+OpenAI API calls cost money.
+Use local models (Llama, Falcon) if cost is a concern.
