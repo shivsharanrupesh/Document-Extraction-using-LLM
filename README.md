@@ -59,8 +59,11 @@ Short Address (<10 chars)	      +10
 Max Risk Score	                100
 
 # Risk Categories
+
 0-20 → Low Risk ✅ (Complete, valid KYC)
+
 21-50 → Medium Risk ⚠️ (Some missing data)
+
 51-100 → High Risk 🔴 (Many missing fields, fraud indicators)
 
 
