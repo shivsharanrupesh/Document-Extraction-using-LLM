@@ -69,8 +69,11 @@ Tesseract OCR (Optical Character Recognition) is an open-source engine developed
 
 # Key Features
 ✅ Supports multiple languages
+
 ✅ Works with printed text, not handwritten
+
 ✅ Handles image preprocessing for better accuracy
+
 ✅ Can extract text from various formats (JPG, PNG, TIFF, PDF)
 
 
@@ -101,9 +104,13 @@ Output → AI-generated response (response.choices[0].message.content)
 
 # Features of the Pipeline
 ✅ Extracts text from PDFs & images using Tesseract OCR
+
 ✅ Identifies key fields (Name, DOB, Address, Document Type) using Regex
+
 ✅ Validates extracted data with GPT (LLM-based validation)
+
 ✅ Computes a risk score based on missing fields & document inconsistencies
+
 ✅ Stores the results in a structured Pandas DataFrame
 
 
@@ -111,3 +118,26 @@ Output → AI-generated response (response.choices[0].message.content)
 1. Store in a database (MongoDB/PostgreSQL)
 2. Add Face Matching with OpenCV
 3. Integrate Real-time AML Checks
+
+# Why Use LLM in This Pipeline?
+The OCR component (Tesseract) extracts raw text from scanned KYC documents, but it has limitations:
+
+1. OCR makes errors (e.g., misreading letters/numbers).
+2. Extracted text is unstructured (no context or validation).
+3. Regex-based extraction only finds predefined patterns and misses variations in documents.
+
+LLMs (like GPT-4) enhance the pipeline by: 
+✅ Validating the extracted information (detecting inconsistencies or formatting issues).
+
+✅ Handling variations in KYC documents across different banks and regions.
+
+✅ Detecting potential fraud indicators (e.g., invalid document numbers, suspicious addresses).
+
+✅ Providing intelligent risk assessment by analyzing extracted data holistically.
+
+✅ Summarizing & structuring the extracted data to make it easier for compliance teams.
+
+# Key Use Casses of LLM in KYC and AML
+
+![image](https://github.com/user-attachments/assets/25499889-ca96-445e-b18f-113d4ac6a103)
+
