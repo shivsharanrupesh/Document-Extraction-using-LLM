@@ -98,11 +98,16 @@ response = client.chat.completions.create(
 
 # Explanation
 "role": "system" → Defines AI behavior
+
 "role": "user" → User's input message
+
 Model → Supports "gpt-4", "gpt-3.5-turbo", etc.
+
 Output → AI-generated response (response.choices[0].message.content)
 
+
 # Features of the Pipeline
+
 ✅ Extracts text from PDFs & images using Tesseract OCR
 
 ✅ Identifies key fields (Name, DOB, Address, Document Type) using Regex
@@ -127,6 +132,7 @@ The OCR component (Tesseract) extracts raw text from scanned KYC documents, but 
 3. Regex-based extraction only finds predefined patterns and misses variations in documents.
 
 LLMs (like GPT-4) enhance the pipeline by: 
+
 ✅ Validating the extracted information (detecting inconsistencies or formatting issues).
 
 ✅ Handling variations in KYC documents across different banks and regions.
