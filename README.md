@@ -63,3 +63,51 @@ Max Risk Score	                100
 21-50 → Medium Risk ⚠️ (Some missing data)
 51-100 → High Risk 🔴 (Many missing fields, fraud indicators)
 
+
+# Tesseract OCR: Overview & Usage
+Tesseract OCR (Optical Character Recognition) is an open-source engine developed by Google for extracting text from images and scanned documents.
+
+# Key Features
+✅ Supports multiple languages
+✅ Works with printed text, not handwritten
+✅ Handles image preprocessing for better accuracy
+✅ Can extract text from various formats (JPG, PNG, TIFF, PDF)
+
+
+# OpenAI chat.completions API
+This API is used for chat-based AI responses, like using GPT-4 for document processing, risk scoring, or summarization.
+
+# How It Works
+Takes input messages (like a conversation)
+Processes with an LLM (GPT-4)
+Returns AI-generated output (text-based response)
+
+# Snippet
+
+client = openai.OpenAI(api_key="your_openai_api_key")
+response = client.chat.completions.create(
+    model="gpt-4",
+    messages=[
+        {"role": "system", "content": "You are a helpful assistant."},
+        {"role": "user", "content": "What is financial crime?"}
+    ]
+)
+
+# Explanation
+"role": "system" → Defines AI behavior
+"role": "user" → User's input message
+Model → Supports "gpt-4", "gpt-3.5-turbo", etc.
+Output → AI-generated response (response.choices[0].message.content)
+
+# Features of the Pipeline
+✅ Extracts text from PDFs & images using Tesseract OCR
+✅ Identifies key fields (Name, DOB, Address, Document Type) using Regex
+✅ Validates extracted data with GPT (LLM-based validation)
+✅ Computes a risk score based on missing fields & document inconsistencies
+✅ Stores the results in a structured Pandas DataFrame
+
+
+# Next Steps
+1. Store in a database (MongoDB/PostgreSQL)
+2. Add Face Matching with OpenCV
+3. Integrate Real-time AML Checks
