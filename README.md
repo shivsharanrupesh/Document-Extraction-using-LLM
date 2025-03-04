@@ -6,6 +6,50 @@ Operations-based use cases involving document extraction in Python with LLMs (La
 Use Case: Automate the extraction of key details from customer-submitted documents (e.g., passports, utility bills, bank statements) for Know Your Customer (KYC) and Anti-Money Laundering (AML) compliance.
 LLM Application: Use LLMs and OCR (e.g., Tesseract, AWS Textract, Google Vision API) to extract and validate key fields like name, address, date of birth, and document validity.
 
+# Step-by-Step KYC Process
+
+# 1️⃣ Customer Onboarding Initiation
+ • The customer begins the process by submitting an application.
+ • The customer provides necessary identity and address verification documents.
+ • For corporate accounts, the customer submits business registration details and Ultimate Beneficial Owner (UBO) information.
+
+# 2️⃣ Document Collection & Verification
+
+✅ For Individuals:
+ • Identity Proof: Passport, Driving License, UK Biometric Residence Permit.
+ • Address Proof: Utility Bill, Bank Statement, Council Tax Bill (issued within the last 3 months).
+
+✅ For Businesses:
+ • Company Incorporation Certificate.
+ • UBO Verification.
+ • Financial Statements (if required).
+
+# 3️⃣ Identity Verification
+ • Automated Checks: AI-driven identity verification, OCR scanning, and biometric face matching (where applicable).
+ • Manual Review: In case of discrepancies or issues, further verification may be necessary.
+
+# 4️⃣ Screening & Due Diligence
+
+All applicants undergo thorough checks:
+ • Sanctions Screening: Cross-checking with global sanctions lists, including the UK Sanctions List (OFSI), UN, EU, and others.
+ • PEP (Politically Exposed Person) Check: Identifying individuals holding high-risk political positions.
+ • Adverse Media Screening: Searching for negative media reports linked to financial crimes or illicit activities.
+ • Risk Assessment: The applicant is classified into one of three risk levels—Low, Medium, or High.
+
+# 5️⃣ Risk-Based Decisioning
+ • Low-Risk: Auto-approval with standard due diligence (SDD).
+ • Medium-Risk: Enhanced due diligence (EDD), which may include additional document verification.
+ • High-Risk: Comprehensive review with senior compliance approval before making a decision.
+
+# 6️⃣ Customer Approval & Account Activation
+ • Approved: The customer is successfully onboarded, and their account is activated.
+ • Rejected: The customer is notified of the rejection, with clear reasons provided, in accordance with GDPR and FCA fairness principles.
+
+# 7️⃣ Ongoing Monitoring & Periodic Review
+ • Continuous Transaction Monitoring: Ongoing monitoring to detect any unusual activity or patterns in transactions.
+ • Periodic KYC Updates: Regular updates based on the customer’s risk profile (e.g., high-risk customers are reviewed annually).
+ • Suspicious Activity Reports (SARs): Filed with the National Crime Agency (NCA) if suspicious activity is detected.
+
 # Operations Workflow:
 1. Receive scanned KYC documents.
 2. Extract text using OCR.
