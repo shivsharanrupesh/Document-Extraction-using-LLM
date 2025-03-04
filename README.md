@@ -225,3 +225,38 @@ If the document format never changes, regex is faster.
 3. If Cost is an Issue
 OpenAI API calls cost money.
 Use local models (Llama, Falcon) if cost is a concern.
+
+
+# LLMs replace OCR? 🤔 
+
+Yes—but not without limitations. 👇  
+
+A new benchmark, Omni AI OCR, tests LLMs and traditional OCR across three dimensions:  
+
+🔷 Accuracy
+🔷 Speed 
+🔷 Cost  
+
+# How did they test it?  
+
+Researchers collected 1,000 documents—a mix of vector PDFs and scanned images.  
+
+For each document, they:  
+1️⃣ Created a JSON schema and a ground truth JSON 
+2️⃣ Had each system parse the document into markdown  
+3️⃣ Used GPT-4o as a judge to reconstruct JSON from markdown and compare it to the ground truth  
+
+The results?  
+✅ Vision-Language Models (VLMs) outperform traditional OCR  
+✅ Gemini 2.0 Flash is both cheaper and more accurate than GPT-4o (86% vs. 75%,*$1.12 vs. $18.37)  
+✅ VLMs excel at handling charts & infographics, handwriting, complex input fields  
+✅ Traditional OCR is still better for textbooks & research papers, fixed-layout documents (e.g., tax forms)  
+
+⚠️ Limitations: LLMs can refuse to process certain documents due to content policies—for example, GPT-4o won’t process ID cards.  
+
+So, do we need specialized small language models for OCR tasks?  
+
+What do you think? 👇
+
+![image](https://github.com/user-attachments/assets/c42e87dc-b625-4a1e-b0de-cd5a95080629)
+
