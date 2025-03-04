@@ -227,7 +227,7 @@ OpenAI API calls cost money.
 Use local models (Llama, Falcon) if cost is a concern.
 
 
-# LLMs replace OCR? 🤔 
+# LLMs replace OCR? 🤔 (General Research)
 
 Yes—but not without limitations. 👇  
 
